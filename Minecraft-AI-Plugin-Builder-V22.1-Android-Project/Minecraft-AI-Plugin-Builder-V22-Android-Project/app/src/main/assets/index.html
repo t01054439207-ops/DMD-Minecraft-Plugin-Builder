@@ -1,0 +1,11 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><title>DMD V22</title><style>
+*{box-sizing:border-box}body{margin:0;padding:20px;background:#101827;color:#f4f7fb;font-family:system-ui,sans-serif}.wrap{max-width:620px;margin:auto}.brand{color:#9db1d0;letter-spacing:2px;font-size:12px}h1{font-size:25px;margin:8px 0}.sub,.note{color:#aab8cc;font-size:13px;line-height:1.55}.card{background:#1b2940;border:1px solid #30425e;border-radius:18px;padding:18px;margin-top:18px}label{display:block;color:#c8d4e6;font-size:13px;margin:13px 0 6px}input,textarea,select{width:100%;padding:13px;border:1px solid #52647f;border-radius:11px;background:#101b2d;color:white;font-size:16px}textarea{min-height:90px}button{width:100%;padding:15px;margin-top:18px;border:0;border-radius:12px;background:#55d38c;color:#082315;font-weight:800;font-size:16px}.pill{display:inline-block;background:#263b58;color:#c6d8f1;border-radius:30px;padding:6px 10px;font-size:12px}
+</style></head><body><main class="wrap"><div class="brand">DMD · ANDROID EDITION</div><h1>Minecraft Plugin Builder</h1><p class="sub">V22 · 모바일 전용 · 오프라인 기본 생성</p><section class="card"><span class="pill">프로젝트 생성기</span>
+<label>플러그인 이름</label><input id="name" value="WelcomePlugin" maxlength="32">
+<label>만들 기능 설명</label><textarea id="desc">플레이어가 접속하면 환영 메시지를 보여줘.</textarea>
+<label>생성 방식</label><select id="lang"><option>Java</option><option>Skript</option></select>
+<label>서버 플랫폼</label><select id="platform"><option>Paper</option><option>Purpur</option><option>Spigot</option></select>
+<label>마인크래프트 버전</label><select id="version"><option>1.21.8</option><option>1.21.7</option><option>1.21.6</option><option>1.21.5</option><option>1.21.4</option><option>1.21.1</option><option>1.20.6</option><option>1.20.4</option><option>1.20.1</option></select>
+<button onclick="generate()">프로젝트 ZIP 만들기</button><p class="note">ZIP은 Android 저장 화면에서 위치를 골라 저장합니다. 현재는 오프라인 스타터 템플릿이며, 복잡한 요청을 완성형 플러그인으로 구현하는 AI 기능은 포함되지 않았습니다.</p></section></main><script>
+function generate(){const val=id=>document.getElementById(id).value; if(window.Android){Android.exportZip(val('name'),val('desc'),val('lang'),val('platform'),val('version'));}else{alert('Android 앱 안에서 실행해 주세요.');}}
+</script></body></html>
